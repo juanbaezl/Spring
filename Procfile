@@ -1,1 +1,1 @@
-web: java -jar target/spring-1.0-SNAPSHOT.jar
+web: java -cp "target/classes" src/main/java/co/edu/escuelaing/app/WebSiteController.java
