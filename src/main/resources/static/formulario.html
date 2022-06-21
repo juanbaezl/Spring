@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello Post</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Form Get</h1>
+    <form id="getForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" value="Juan">
+        <input type="button" onclick="getFunc()" value="Submit">
+    </form>
+    <h1>Form Post</h1>
+    <form id="postForm">
+        <label for="postname">Nombre:</label>
+        <input type="text" id="postname" name="name" value="Juan">
+        <input type="button" onclick="postFunc()" value="Submit">
+    </form>
+    <br>
+    <br>
+    <div id="response"></div>
+</body>
+<script type="text/javascript">
+    function getFunc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            document.getElementById("response").innerHTML=this.responseText;
+        }
+        xhttp.open("GET", "/hello?name="+ document.getElementById("name").value);
+        xhttp.send()
+    }
+    function postFunc() {
+        const data = new FormData(document.getElementById('postForm'));
+        fetch('/helloPost', {
+            method: 'POST',
+            body: data
+        }).then(res => res.text()).then(text => document.getElementById("response").innerHTML = text)
+    }
+</script>
+</html>
