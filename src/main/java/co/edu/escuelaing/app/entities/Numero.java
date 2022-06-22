@@ -49,17 +49,19 @@ public class Numero {
      */
     public String comparacion(String entrante) {
         intentos++;
+        ArrayList<Integer> index = new ArrayList<Integer>();
         ArrayList<Integer> copy = new ArrayList<Integer>(num);
         List<String> entList = Arrays.asList(entrante.split(""));
         int picas = 0, famas = 0;
         for (int i = 0; i < entList.size(); i++) {
             int numero = Integer.parseInt(entList.get(i));
             if (numero == copy.get(i - picas - famas)) {
-                copy.remove(i - picas - famas);
+                copy.remove(i - famas);
+                index.add(i);
                 famas++;
             }
         }
-        for (int i = 0; i < entList.size(); i++) {
+        for (int i = 0; i < entList.size() && !index.contains(i); i++) {
             int numero = Integer.parseInt(entList.get(i));
             if (copy.contains(numero)) {
                 copy.remove(copy.indexOf(numero));
