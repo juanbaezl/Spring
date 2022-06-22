@@ -1,4 +1,4 @@
-package co.edu.escuelaing.app;
+package co.edu.escuelaing.app.handlers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import co.edu.escuelaing.app.entities.Numero;
 
 @SpringBootApplication
 @RestController
@@ -32,5 +34,24 @@ public class WebSiteController {
     @ResponseBody
     public String helloPost(@RequestParam(value = "name", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
+    }
+
+    @GetMapping("/start")
+    public String start() {
+        Numero juego = Numero.getInstance();
+        juego.newNum();
+        return juego.getNum().toString();
+    }
+
+    @GetMapping("/comparacion")
+    public String comparacion(@RequestParam(value = "numero", defaultValue = "0000") String numero) {
+        Numero juego = Numero.getInstance();
+        return juego.comparacion(numero);
+    }
+
+    @GetMapping("/intentosNum")
+    public int intentosNum() {
+        Numero juego = Numero.getInstance();
+        return juego.getIntentos();
     }
 }

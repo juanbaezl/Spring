@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Juego</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/juego.css">
+    <script src="js/juego.js"></script>
+</head>
+
+<body id="body">
+    <h1>Famas y Picas</h1>
+    <form id="iniciar">
+        <input class="btn" type="button" value="Iniciar Juego" onclick="iniciar()">
+    </form>
+    <form id="juego" class="form" style="display: none">    
+        <div id="linea0" class="divJuego">
+            <input id="num1" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num2" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num3" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num4" required="true" type="int" class="inputNumber" maxlength="1">
+            <label id="label" class="res"></label>
+        </div>
+        <div id="linea1" class="divJuego" style="display: none">
+            <input id="num1" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num2" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num3" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num4" required="true" type="int" class="inputNumber" maxlength="1">
+            <label id="label" class="res"></label>
+        </div>
+        <div id="linea2" class="divJuego" style="display: none">
+            <input id="num1" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num2" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num3" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num4" required="true" type="int" class="inputNumber" maxlength="1">
+            <label id="label" class="res"></label>
+        </div>
+        <div id="linea3" class="divJuego" style="display: none">
+            <input id="num1" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num2" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num3" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num4" required="true" type="int" class="inputNumber" maxlength="1">
+            <label id="label" class="res"></label>
+        </div>
+        <div id="linea4" class="divJuego" style="display: none">
+            <input id="num1" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num2" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num3" required="true" type="int" class="inputNumber" maxlength="1">
+            <input id="num4" required="true" type="int" class="inputNumber" maxlength="1">
+            <label id="label" class="res"></label>
+        </div>
+        <input id="submit" class="btn" type="button" value="Submit" onclick="intento()">
+        <div><a id="retry" href="/juego.html" style="display: none">Volver a Jugar</a></div>
+    </form>
+</body>
+
+</html>
